@@ -10,4 +10,13 @@ class Admin extends CI_Controller
         $this->load->view('admin/index');
         $this->load->view('template/footer');
     }
+
+    public function activity()
+    {
+
+        $this->load->view('template/sidebar');
+        $this->load->view('template/navbar');
+        $this->load->view('admin/index');
+        $this->load->view('template/footer');
+    }
 }

@@ -11,7 +11,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="./style.css">
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<!-- /* Code By Webdevtrick ( https://webdevtrick.com ) */ -->
 	<style>
 		.container {
@@ -36,6 +36,13 @@
 		<span onload="time()" id="span"></span>
 	</div>
 
+	<script type="text/javascript">
+		$(document).ready(function() {
+			setTimeout(function() {
+				location.reload();
+			}, 5000);
+		})
+	</script>
 	<script>
 		// Code By Webdevtrick ( https://webdevtrick.com )
 		function showTime() {

@@ -4,9 +4,9 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i class="fas fa-user-lock"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">Administrator</div>
             </a>
 
             <!-- Divider -->
@@ -24,23 +24,28 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Activity
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item <?= $link2 ?>">
                 <a class="nav-link" href="<?= base_url('admin/activity') ?>">
                     <i class="fas fa-chart-line"></i>
-                    <span>Activity</span></a>
+                    <span>Activity Data</span></a>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item <?= $link3 ?>">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-info-circle"></i>
-                    <span>Report</span></a>
+                <a class="nav-link" href="<?= base_url('admin/cancelActivities') ?>">
+                    <i class="fas fa-window-close"></i>
+                    <span>Canceled Activities</span></a>
             </li>
 
+            <li class="nav-item <?= $link4 ?>">
+                <a class="nav-link" href="<?= base_url('admin/carriedOutActivities') ?>">
+                    <i class="fas fa-check"></i>
+                    <span>carried out activities</span></a>
+            </li>
 
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -48,6 +53,11 @@
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
+            <hr class="sidebar-divider d-none d-md-block">
+            <div class="text-center">
+                <h1><a class="text-danger" href="<?= base_url('home') ?>" onclick="return confirm('apakah anda yakin untuk keluar dari halaman ini')"><i class="fas fa-sign-out-alt"></i></a></h1>
+            </div>
+            <hr class="sidebar-divider d-none d-md-block">
 
 
 

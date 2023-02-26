@@ -53,10 +53,16 @@ $date = date("l, M-d-y");
                         <td><?= $today['location'] ?></td>
 
                     </tr>
+
                     <?php $i++ ?>
                 <?php endforeach ?>
             </tbody>
         </table>
+        <?php if (empty($toDay)) : ?>
+            <div class="alert alert-warning text-center" role="alert">
+                Tidak ada jadwal kegiatan hari ini
+            </div>
+        <?php endif; ?>
     </div>
 
 </div>
@@ -96,6 +102,11 @@ $date = date("l, M-d-y");
 
             </tbody>
         </table>
+        <?php if (empty($Tomorrow)) : ?>
+            <div class="alert alert-warning text-center" role="alert">
+                Tidak ada jadwal kegiatan untuk besok
+            </div>
+        <?php endif; ?>
     </div>
 
 </div>

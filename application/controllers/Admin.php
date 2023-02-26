@@ -9,6 +9,23 @@ class Admin extends CI_Controller
     {
         parent::__construct();
         $this->load->model('AdminModel', 'am');
+
+
+        // auto complete feature 
+        $time = time() - 60 * 60 * 24;
+
+        $date = date('Y-m-d', $time);
+
+        $data = array(
+            'role_activity' => 2
+        );
+
+        $where = ['activityDate' => $date, 'role_activity' => 0];
+
+        $this->db->where($where)->update('activity', $data);
+        // end auto complete feature 
+
+
     }
 
     public function index()
@@ -18,6 +35,7 @@ class Admin extends CI_Controller
         $data['link1'] = 'active';
         $data['link2'] = '';
         $data['link3'] = '';
+        $data['link4'] = '';
         // End Link Active
 
 
@@ -45,13 +63,11 @@ class Admin extends CI_Controller
             $data['link1'] = '';
             $data['link2'] = 'active';
             $data['link3'] = '';
+            $data['link4'] = '';
             // End Link Active
 
             $data['activity'] = $this->am->getAllDataActivity();
 
-
-
- 
             $this->load->view('template/header');
             $this->load->view('template/sidebar', $data);
             $this->load->view('template/topbar');
@@ -68,9 +84,53 @@ class Admin extends CI_Controller
         $this->am->deleteActivityAction($id);
     }
 
-    public function cancelActivity()
+    public function cancelActivity($id)
     {
 
-        redirect('home');
+        $this->am->cancelActivity($id);
+    }
+
+    public function cancelActivities()
+    {
+        // Start Link Active
+        $data['link1'] = '';
+        $data['link2'] = '';
+        $data['link3'] = 'active';
+        $data['link4'] = '';
+
+        // End Link Active
+
+        $data['activity'] = $this->am->getAllDataCancelActivity();
+
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('template/topbar');
+        $this->load->view('admin/cancelActivities', $data);
+        $this->load->view('template/footer');
+    }
+
+
+    public function carriedOutActivities()
+    {
+        // Start Link Active
+        $data['link1'] = '';
+        $data['link2'] = '';
+        $data['link3'] = '';
+        $data['link4'] = 'active';
+
+        // End Link Active
+
+        $data['activity'] = $this->am->getAllcarriedOutActivities();
+
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('template/topbar');
+        $this->load->view('admin/carriedOutActivities', $data);
+        $this->load->view('template/footer');
+    }
+
+    public function editActivity($id)
+    {
+        $data['activity'] = $this->am->editActivity($id);
     }
 }

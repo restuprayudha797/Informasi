@@ -28,6 +28,8 @@ class Admin extends CI_Controller
         $this->load->view('template/footer');
     }
 
+
+
     public function activity()
     {
         $this->form_validation->set_rules('nameOfActivity', 'Name of activity', 'required');
@@ -49,7 +51,7 @@ class Admin extends CI_Controller
 
 
 
-
+ 
             $this->load->view('template/header');
             $this->load->view('template/sidebar', $data);
             $this->load->view('template/topbar');
@@ -60,5 +62,15 @@ class Admin extends CI_Controller
 
             $this->am->insertActivity();
         }
+    }
+    public function deleteActivity($id)
+    {
+        $this->am->deleteActivityAction($id);
+    }
+
+    public function cancelActivity()
+    {
+
+        redirect('home');
     }
 }

@@ -75,7 +75,6 @@
 
 		showTime();
 
-		var span = document.getElementById('span');
 
 		function time() {
 			var d = new Date();
@@ -88,7 +87,6 @@
 
 		setInterval(time, 1000);
 
-		console.log(d)
 		time();
 	</script>
 	<script>

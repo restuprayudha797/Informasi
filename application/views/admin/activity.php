@@ -9,7 +9,7 @@
     </div>
 
 
-    <?php echo validation_errors(); ?>
+    <?= $this->session->flashdata('admin_message') ?>
 
     <div class="card shadow mb-4">
 
@@ -49,7 +49,7 @@
                                     <td><?= $row['timesUp'] ?></td>
                                     <td><?= $row['location'] ?></td>
                                     <td>
-                                        <a href="" class="btn btn-secondary">Delete</a>
+                                        <a href="<?= base_url('admin/deleteActivity/' . $row['id_activity']) ?>" class="btn btn-danger border">Delete</a>
                                     </td>
                                 </tr>
 
@@ -63,7 +63,9 @@
                                     <td><?= $row['timesUp'] ?></td>
                                     <td><?= $row['location'] ?></td>
                                     <td>
-                                        <a href="" class="btn btn-danger">Delete</a>
+                                        <a href="<?= base_url('admin/deleteActivity/' . $row['id_activity']) ?>" class="btn btn-danger">Delete</a>
+                                        <a href="<?= base_url('admin/activity/cancelActivity/' . $row['id_activity']) ?>" class="btn btn-info">Cancel Activity</a>
+
                                     </td>
                                 </tr>
                             <?php endif; ?>

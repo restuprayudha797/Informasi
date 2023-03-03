@@ -40,27 +40,33 @@
 <script src="<?= base_url('assets/') ?>js/demo/datatables-demo.js"></script>
 
 <script>
-    setInterval(function() {
-        location.reload()
-    }, 3000000);
+setInterval(function() {
+    location.reload()
+}, 3000000);
 </script>
 
 <script>
-    var span = document.getElementById('span');
+setInterval(function() {
+    document.getElementById("notification").className = "d-none";
+}, 6000);
+</script>
 
-    function time() {
-        var d = new Date();
-        var s = d.getSeconds();
-        var m = d.getMinutes();
-        var h = d.getHours();
-        span.textContent =
-            ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
-    }
+<script>
+var span = document.getElementById('span');
 
-    setInterval(time, 1000);
+function time() {
+    var d = new Date();
+    var s = d.getSeconds();
+    var m = d.getMinutes();
+    var h = d.getHours();
+    span.textContent =
+        ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
+}
 
-    console.log(d)
-    time();
+setInterval(time, 1000);
+
+console.log(d)
+time();
 </script>
 
 </body>

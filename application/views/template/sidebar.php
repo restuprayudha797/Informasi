@@ -55,7 +55,7 @@
             </div>
             <hr class="sidebar-divider d-none d-md-block">
             <div class="text-center">
-                <h1><a class="text-danger" href="<?= base_url('home') ?>" onclick="return confirm('apakah anda yakin untuk keluar dari halaman ini')"><i class="fas fa-sign-out-alt"></i></a></h1>
+                <h1><a class="text-danger" href="<?= base_url('logout') ?>" onclick="return confirm('apakah anda yakin untuk keluar dari halaman ini')"><i class="fas fa-sign-out-alt"></i></a></h1>
             </div>
             <hr class="sidebar-divider d-none d-md-block">
 

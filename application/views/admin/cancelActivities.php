@@ -1,18 +1,17 @@
 <!-- Begin Page Content -->
 <div class="container-fluid" style="height: 100%;">
 
-    <!-- Page Heading -->
-    <div class="align-items-center justify-content-between mb-4">
-        <i class="fas fa-tachometer-alt-fastest"></i>
-        <h1 class="h3 mb-0 text-gray-800 text-start">activity data
-        </h1>
-    </div>
+
 
 
     <?= $this->session->flashdata('admin_message') ?>
 
     <div class="card shadow mb-4">
-
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">
+                Canceled Activities
+            </h6>
+        </div>
         <div class="card-body">
             <div class="">
 

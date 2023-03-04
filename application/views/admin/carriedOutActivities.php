@@ -2,17 +2,17 @@
 <div class="container-fluid" style="height: 100%;">
 
     <!-- Page Heading -->
-    <div class="align-items-center justify-content-between mb-4">
-        <i class="fas fa-tachometer-alt-fastest"></i>
-        <h1 class="h3 mb-0 text-gray-800 text-start">activity data
-        </h1>
-    </div>
+
 
 
     <?= $this->session->flashdata('admin_message') ?>
 
     <div class="card shadow mb-4">
-
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">
+                Carried out activities
+            </h6>
+        </div>
         <div class="card-body">
             <div class="">
 
@@ -36,18 +36,18 @@
                         <?php $i = 1; ?>
                         <?php foreach ($activity as $row) : ?>
 
-                            <tr class="bg-light text-dark">
-                                <td><?= $i ?></td>
-                                <td><?= $row['nameOfActivity'] ?></td>
-                                <td><?= $row['personResponsible'] ?></td>
-                                <td><?= $row['activityDate'] ?></td>
-                                <td><?= $row['startTime'] ?></td>
-                                <td><?= $row['timesUp'] ?></td>
-                                <td><?= $row['location'] ?></td>
-                                <td class="bg-success text-light">Done</td>
+                        <tr class="bg-light text-dark">
+                            <td><?= $i ?></td>
+                            <td><?= $row['nameOfActivity'] ?></td>
+                            <td><?= $row['personResponsible'] ?></td>
+                            <td><?= $row['activityDate'] ?></td>
+                            <td><?= $row['startTime'] ?></td>
+                            <td><?= $row['timesUp'] ?></td>
+                            <td><?= $row['location'] ?></td>
+                            <td class="bg-success text-light">Done</td>
 
-                            </tr>
-                            <?php $i++; ?>
+                        </tr>
+                        <?php $i++; ?>
                         <?php endforeach; ?>
                     </tbody>
                 </table>

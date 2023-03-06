@@ -125,4 +125,59 @@ class AdminModel extends CI_Model
 
     return $this->db->get_where('activity', ['role_activity' => 2])->result_array();
   }
+  public function getAllUsers()
+  {
+    return $this->db->get('users')->result_array();
+  }
+
+  public function insertUser()
+  {
+    $name = $this->input->post('name', true);
+    $email = $this->input->post('email', true);
+    $password =  password_hash($this->input->post('password', true), PASSWORD_DEFAULT);
+
+
+    $data = [
+
+      'name' => $name,
+      'email' => $email,
+      'password' => $password,
+
+
+
+    ];
+
+    $this->db->insert('users', $data);
+    $this->session->set_flashdata('admin_message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>
+        User data added successfully
+        </strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>');
+    redirect('admin/users');
+  }
+
+
+
+
+
+
+
+  public function deleteUserAction($id)
+  {
+
+
+    $this->db->where('id_users', $id)->delete('users');
+    $this->session->set_flashdata('admin_message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>
+        User data has been successfully deleted</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>');
+
+    redirect('admin/users');
+  }
 }
